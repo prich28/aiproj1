@@ -27,9 +27,9 @@ RUN:
 2. Run the following command: `python3 main.py`
 3. Follow the instructions on the command prompt.
 
-
 **Important**
 * After the program is launched:
 A graph of the class distribution is generated.
 In order for the program to continue and finish running (and to get the output files), you may need to save or close this window!
 
+4. The output files are generated in the root of the project folder.
