@@ -18,7 +18,9 @@ train file
 validation file (if you wish to run validation instead of testing(
 test file with labels (if you wish to test)
 
-* Do not worry about the names of the files, you will be prompted to enter them. However please ensure they are in the 'dataset/' folder.
+* Do not worry about the names of the files, you will be prompted to enter them.
+When you are propmpted, you only need put the name, the program will search the 'dataset/' folder.
+Please ensure they are in the 'dataset/' folder.
 
 
 
