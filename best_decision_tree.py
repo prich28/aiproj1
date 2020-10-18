@@ -1,11 +1,9 @@
-from csv_io import get_csv_data
 from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import GridSearchCV
 from evaluation import clf_evaluation
-import numpy as np
+from sklearn.model_selection import GridSearchCV
 
 
-def run_best_dt(all_labels, train_features, train_labels, val_features, val_labels, test_features, test_labels):
+def run_best_dt(ds_id, all_labels, train_features, train_labels, val_features, val_labels, test_features, test_labels):
 
     # These hyper parameters were found using the GridSearchCV algorithm
     base_dt_clf = DecisionTreeClassifier(criterion='entropy', max_depth=None, class_weight=None,
@@ -25,15 +23,17 @@ def run_best_dt(all_labels, train_features, train_labels, val_features, val_labe
     # Train
     base_dt_clf = base_dt_clf.fit(train_features, train_labels)
 
-    # Validation
     # print('Best parameters found:\n', dt_clf_with_gs.best_params_)
-    # pred_labels = dt_clf_with_gs.predict(val_features)
 
-    # Evaluation of Validation data
-    # clf_evaluation(val_labels, pred_labels, all_labels, 'Best-DT-DS1.csv')
+    if val_features is not None and val_labels is not None:
+        # Validation
+        pred_labels = base_dt_clf.predict(val_features)
 
-    # Test
-    pred_labels = base_dt_clf.predict(test_features)
+        # Evaluation of Validation data
+        clf_evaluation(val_labels, pred_labels, all_labels, 'Best-DT_val.csv')
+    else:
+        # Test
+        pred_labels = base_dt_clf.predict(test_features)
 
-    # Evaluation of Test data
-    clf_evaluation(test_labels, pred_labels, all_labels, 'Best-DT-DS1.csv')
+        # Evaluation of Test data
+        clf_evaluation(test_labels, pred_labels, all_labels, 'Best-DT-' + ds_id + '.csv')

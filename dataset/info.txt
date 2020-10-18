@@ -1,0 +1,4 @@
+Please place all dataset files in this folder
+
+** Be sure that if you use the info file that the first line is a header and not part of the data. **
+If you do not use the info file, leave the file name blank when prompted and manually enter the number of classes.

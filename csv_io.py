@@ -8,8 +8,6 @@ def get_csv_data(filepath):
 
     labels = csv[:, num_columns - 1]
     features = np.delete(csv, num_columns - 1, 1)
-    print(labels)
-    print(features)
     return features, labels
 
 
@@ -20,7 +18,7 @@ def write_csv_data(instance_pred, confusion, precision_by_classes, recall_by_cla
         np.savetxt(f, instance_pred, delimiter=',', fmt='%i')
         f.write('\n')
 
-        f.write('Confusion Matrix\n')
+        f.write('Confusion Matrix: Rows=True Values, Columns=Predicted Values\n')
         np.savetxt(f, confusion, delimiter=',', fmt='%i')
         f.write('\n')
 
