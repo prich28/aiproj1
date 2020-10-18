@@ -1,4 +1,4 @@
-# aiproj1
+# Artificial Intelligence (COMP 372) Project 1
 Artificial Intelligence (COMP 372) Project 1
 
 GitHub URL: https://github.com/prich28/aiproj1
